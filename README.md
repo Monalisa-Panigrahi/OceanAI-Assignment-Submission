@@ -1,145 +1,142 @@
-# OceanAI-Assignment-Submission
-AI-powered platform to create and refine Word (.docx) and PowerPoint (.pptx) documents. Users can configure outlines, generate content using LLMs, refine sections with prompts, and export final files. Includes authentication, project management, and a full interactive editor.
-🚀 Overview
+OceanAI is an AI-driven platform that enables users to create, refine, and export professional Word (.docx) and PowerPoint (.pptx) documents.
+It provides an end-to-end workflow for generating content using LLMs, improving sections through iterative prompts, and exporting the final output as polished files.
 
-This project allows authenticated users to:
+The platform is designed for students, professionals, and teams who require structured document creation combined with AI-based assistance.
 
-Choose a document format: Word (.docx) or PowerPoint (.pptx)
+1. Overview
 
-Define document structure (outline or slide titles)
+OceanAI allows authenticated users to:
 
-Generate content using a Large Language Model (LLM) such as Google Gemini
+Select a document format (.docx or .pptx)
 
-Refine and improve content section-by-section
+Configure the structure (outline sections or slide titles)
 
-Export the final result as a professional .docx or .pptx file
+Generate content using a Large Language Model (Gemini or any LLM API)
 
-The system includes authentication, project management, AI integration, refinement tools, and export functionalities.
+Refine content section-by-section with custom instructions
 
-🧠 Core Features
-1. User Authentication & Dashboard
+View and manage all projects from a dashboard
 
-Secure login & registration (JWT or Firebase Auth)
+Export the final version as a downloadable Word or PowerPoint file
 
-Dashboard showing all user projects
+The system supports complete project management, content history, and advanced refinement tools.
 
-Create new projects with custom configurations
+2. Core Features
+a) User Authentication and Dashboard
 
-Stores:
+Secure user registration and login (JWT / Firebase Auth)
 
-Document type
+Personalized dashboard displaying all saved projects
 
-Outline/slide configuration
+Ability to create, edit, and delete projects
+
+Each project stores:
+
+Document type (Word or PowerPoint)
+
+Initial configuration
 
 Generated content
 
-Refinement history (edits, comments, feedback)
+Refinement history and comments
 
-2. Document Configuration
+b) Document Configuration
 
-Users configure documents by:
-
-Selecting .docx or .pptx
-
-Entering the topic or main prompt
-(e.g., “Market analysis of the EV industry in 2025”)
-
-Depending on document type:
+Users can configure a document before content generation:
 
 For Word (.docx):
 
-Add, remove, reorder, rename outline sections
+Add, remove, reorder, and rename outline sections
+
+Suitable for reports, assignments, case studies, and articles
 
 For PowerPoint (.pptx):
 
-Define number of slides
+Define total number of slides
 
-Provide a title for each slide
+Provide titles for each slide
 
-3. AI-Powered Content Generation
+Designed for presentations, summaries, and pitch decks
 
-Backend generates content section-by-section or slide-by-slide
+c) AI-Based Content Generation
 
-Each LLM request is contextualized to the specific section
+Content is generated per section or per slide
 
-Uses Gemini or any other LLM API
+Each LLM request is context-specific for better accuracy
 
-Stores all generated text in the database
+Supports Gemini or any other API-compatible LLM
 
-4. Interactive Refinement Interface
+All generated outputs are saved to the project database
 
-Each section or slide includes:
+Ensures consistent writing style across the document
 
-✨ AI Refinement Prompt
-Users enter instructions like:
+d) Interactive Refinement Workspace
 
-“Make this more formal”
+Each section or slide comes with a fully interactive editing interface:
 
-“Convert to bullet points”
+Refinement Prompt
+Users can request modifications such as:
 
-“Shorten to 100 words”
+Make the text formal or concise
 
-👍 Feedback Buttons
-Like/Dislike to track content quality
+Convert into bullet points
 
-💬 Comment Box
-Users can add notes — all saved to the database
+Expand or simplify the explanation
 
-Persistence included: each AI edit, refinement prompt, and comment is stored per section.
+Feedback Controls
+Like/Dislike buttons to track quality of generated content
 
-5. Document Export
+Comments and Notes
+Users can add detailed notes, and each comment is saved for future reference
 
-Backend generates a final downloadable file:
+Complete Edit History
+Every AI edit and user refinement is stored, allowing rollbacks or comparisons
 
-.docx created using python-docx
+e) Document Export
 
-.pptx created using python-pptx
+OceanAI can generate ready-to-download files:
 
-Exports always use the latest refined content from the database.
+DOCX Generation:
+Handled through python-docx, ensuring proper formatting
 
-🌟 Bonus (Optional)
-AI-Generated Templates
+PPTX Generation:
+Built slide-by-slide with python-pptx
 
-AI can automatically suggest:
+The export system always uses the most recent refined content, ensuring the final file reflects all edits and improvements.
 
-Word document outline
+3. Optional Enhancements
+AI-Suggested Templates
 
-PowerPoint slide titles
+Automatically proposes outlines for Word documents
 
-Users may accept or edit the generated structure.
+Can generate slide titles for PowerPoint presentations
 
-🧩 Tech Stack
+Users may accept, reject, or edit suggestions before generating content
+
+4. Tech Stack
 Backend (FastAPI or Flask)
 
-Handles:
+User authentication via JWT or Firebase Auth
 
-Authentication (JWT)
+API endpoints for content generation and refinement
 
-AI API calls
+Integration with Gemini or other LLM providers
 
-Content generation & refinement
+Document assembly for DOCX/PPTX
 
-Database communication
+Project and history management
 
-DOCX/PPTX file assembly
+Frontend (React / Vue / Standard HTML-CSS-JS)
 
-Frontend (React / Vue / HTML-CSS-JS)
+Responsive and clean user interface
 
-Provides:
+Document configuration module
 
-Modern, responsive UI
+Editing and refinement workspace
 
-Authentication pages
+Authentication and dashboard views
 
-Project dashboard
-
-Document configuration
-
-Refinement interface
-
-Database
-
-Any of:
+Database Options
 
 Firebase Firestore
 
@@ -147,4 +144,48 @@ PostgreSQL
 
 SQLite
 
-Stores all user & project data.
+Any of these can be used depending on deployment environments and scaling needs.
+
+5. Project Structure (Example)
+OceanAI/
+│── backend/
+│   ├── api/
+│   ├── models/
+│   ├── services/
+│   ├── docx_export/
+│   ├── pptx_export/
+│   └── main.py
+│
+│── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   └── App.js
+│
+└── README.md
+
+6. Key Advantages
+
+Structured workflow for long documents and presentations
+
+Consistent content generation using section-aware prompts
+
+Full control over document design and flow
+
+Interactive and traceable refinement process
+
+Production-ready export mechanism for .docx and .pptx
+
+Suitable for academic, business, and professional use cases
+
+7. Future Scope
+
+Collaboration mode for multiple users per project
+
+Advanced formatting controls for text styling
+
+Real-time preview of DOCX/PPTX before export
+
+Versioning of documents and automatic backups
+
+Integration with Google Drive and OneDrive for cloud exports
